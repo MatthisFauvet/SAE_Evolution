@@ -2,6 +2,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
+
 /**
  * La class fenetre est une classe qui a simplement pour but de créer une Fenetre, puis attendre que des class hérite d'elle afin d'utiliser sa JFrame
  * @version 1.1
@@ -45,5 +46,11 @@ public class Fenetre implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         point.move();
         SwingUtilities.updateComponentTreeUI(this.fenetre);
+        
+        System.out.println(point.getCoord()[1]);
+
+        if(point.getCoord()[1] == 500.0){
+            point.setSpeedY(-5.0);
+        }
     }
 }
