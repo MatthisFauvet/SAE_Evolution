@@ -22,3 +22,11 @@ java Main
 ```
 
 
+## A faire 
+
+- Supposer un monde infini où les les coorsonnées peuvent être négative et ne sont pas bornées. Concrètement, le terrain n'a aucune limite. 
+
+- Faire une fenêtre qui va uniquement se focaliser sur le barycentre de la structure via les coordonnées de ses points.
+
+
+

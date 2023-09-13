@@ -9,28 +9,27 @@ import javax.swing.*;
  * @author Matthis Fauvet 
  */
 
-public class Fenetre implements ActionListener{
+public class Fenetre extends JFrame implements ActionListener{
     
     protected JFrame fenetre;
-
-    public Point point = new Point(1920/2, 0, 0, 5);
 
     /**
      * Contructeur
      */
     public Fenetre() {
-        this.fenetre = new JFrame("Test");
+        this.fenetre = new JFrame("Simmultaion d'évolution");
 
-        this.fenetre.setSize(1920, 1080);
+        this.fenetre.setSize(1000, 1000);
         this.fenetre.setLocationRelativeTo(null); // centre la fenêtre sur l'écran
 
+        Terrain terrain = new Terrain();
+        this.fenetre.add(terrain);
+
+
         this.fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        this.fenetre.add(point);
-
         this.fenetre.setVisible(true);
 
-        Timer timer = new Timer(10, this); // toutes les 1s
+        Timer timer = new Timer(1000, this); // toutes les 1S
         timer.start();
 
     }
@@ -44,13 +43,6 @@ public class Fenetre implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        point.move();
-        SwingUtilities.updateComponentTreeUI(this.fenetre);
-        
-        System.out.println(point.getCoord()[1]);
-
-        if(point.getCoord()[1] == 500.0){
-            point.setSpeedY(-5.0);
-        }
+        System.out.println("hello world!");
     }
 }

@@ -1,8 +1,4 @@
-import java.awt.*;
-import javax.swing.*;
-
-
-public class Point extends JComponent {
+public class Point{
     public double coordX;
     public double coordY;
 
@@ -54,21 +50,5 @@ public class Point extends JComponent {
     public void move(){
         this.coordX += this.speedX;
         this.coordY += this.speedY;
-    }
-
-    /**
-     * Méthode qui est appelé automatiquement lors d'un apelle de la classe Cellule
-     * Cette méthode à pour but de repeindre notre Cellule 
-     * @param g objet graphique 
-     */
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-
-        g.setColor(Color.BLUE);
-
-        int convertX = (int)this.getCoord()[0];
-        int convertY = (int)this.getCoord()[1];
-        g.fillOval(convertX, convertY, 50, 50);
     }
 }

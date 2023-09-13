@@ -8,19 +8,24 @@ JVMFLAGS =
 
 ### COMPILATTION FICHIER ###
 
-Main.class : Start.java FenetreInit.class Fenetre.class
-	${JC} ${JCFLAGS} Start.java
+Main.class : Main.java Fenetre.class
+	${JC} ${JCFLAGS} Main.java
 
-Fenetre.class : Fenetre.java Point.class
+Fenetre.class : Fenetre.java Point.class Terrain.class
 	${JC} ${JCFLAGS} Fenetre.java
 
 Point.class : Point.java
-	${JC} ${JCFLAGS} FenetreInit.java
+	${JC} ${JCFLAGS} Point.java
+
+
+Terrain.class : Terrain.java
+	${JC} ${JCFLAGS} Terrain.java
+
 
 ### REGLES OPTIONNELLES ###
 
-run : Start.class
-	${JVM} ${JVMFLAGS} Start
+run : Main.class
+	${JVM} ${JVMFLAGS} Main
 
 clean :
 	-rm -f *.class
@@ -28,7 +33,7 @@ clean :
 nettoyer :
 	rm .\*.class
 
-mrproper : clean Start.class
+mrproper : clean Main.class
 
 ### BUTS FACTICES ###
 
